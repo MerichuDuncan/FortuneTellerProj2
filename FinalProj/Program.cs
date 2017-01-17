@@ -29,29 +29,27 @@ namespace FinalProj
                     break;
                 }
 
+
                 userGreetings(firstName, lastName);
                 creepy();
 
-
+                
                 Console.WriteLine("\nEnter your age?");
-                int age = int.Parse(Console.ReadLine());
+                string ageStr = Console.ReadLine();
 
-                creepy();
-                string years = Convert.ToString(age);
-                if (years.ToLower() == "quit" || years.ToLower() == "exit" || years.ToLower() == "restart")
-                {
+                if (ageStr.ToLower() == "quit" || ageStr.ToLower() == "exit" || ageStr.ToLower() == "restart")
                     break;
-                }
-                else
-                {
+                int age = int.Parse(ageStr);
+                creepy();
+                { 
                     Console.WriteLine("\nEnter birth month in number?");
-                    int month = int.Parse(Console.ReadLine());
-                    string location = Convert.ToString(month);
+                    string location = Console.ReadLine();
+                    
 
                     if (location.ToLower() == "quit" || location.ToLower() == "exit" || location.ToLower() == "restart")
-                    {
+                    
                         break;
-                    }
+                    int month = int.Parse(location);
 
                     creepy();
 
