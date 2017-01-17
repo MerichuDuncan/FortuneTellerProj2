@@ -15,7 +15,7 @@ namespace FinalProj
 
                 Console.WriteLine("Enter first name");
                 string firstName = Console.ReadLine();
-                if (firstName == "quit" || firstName == "exit" || firstName == "restart")
+                if (firstName.ToLower() == "quit" || firstName.ToLower() == "exit" || firstName.ToLower() == "restart")
                 {
                     break;
                 }
@@ -23,7 +23,7 @@ namespace FinalProj
 
                 Console.WriteLine("\nEnter last name");
                 string lastName = Console.ReadLine();
-                if (lastName == "exit" || lastName == "quit" || lastName == "restart")
+                if (lastName.ToLower() == "exit" || lastName.ToLower() == "quit" || lastName.ToLower() == "restart")
                 {
 
                     break;
@@ -34,20 +34,21 @@ namespace FinalProj
 
 
                 Console.WriteLine("\nEnter your age?");
-                int age =int.Parse(Console.ReadLine());
+                int age = int.Parse(Console.ReadLine());
+
                 creepy();
                 string years = Convert.ToString(age);
-                if ( years== "quit" || years == "exit" || years == "restart")
+                if (years.ToLower() == "quit" || years.ToLower() == "exit" || years.ToLower() == "restart")
                 {
                     break;
                 }
                 else
                 {
                     Console.WriteLine("\nEnter birth month in number?");
-                    int month =int.Parse(Console.ReadLine());
+                    int month = int.Parse(Console.ReadLine());
                     string location = Convert.ToString(month);
 
-                    if (location == "quit" || location == "exit" || location == "restart")
+                    if (location.ToLower() == "quit" || location.ToLower() == "exit" || location.ToLower() == "restart")
                     {
                         break;
                     }
@@ -56,7 +57,7 @@ namespace FinalProj
 
                     Console.WriteLine("\nWhat's your favorite ROYGBIV color? Enter help for more info of ROYGBIV");
                     string coloR = (Console.ReadLine());
-                    if (coloR == "quit" || coloR == "exit" || coloR == "restart")
+                    if (coloR.ToLower() == "quit" || coloR.ToLower() == "exit" || coloR.ToLower() == "restart") 
                     {
                         break;
                     }
@@ -67,30 +68,28 @@ namespace FinalProj
 
                         Console.WriteLine("\n" + "Enter your favorite ROYGBIV color?");
                         coloR = Console.ReadLine();
+                        creepy();
                     }
-                    creepy();
+                  
 
                     Console.WriteLine("\nEnter number of siblings");
-                    int siblings =(int.Parse(Console.ReadLine()));
-                    creepy();
+                    int siblings = (int.Parse(Console.ReadLine()));
+                   
 
-                    //             [First Name]
-                    //[Last Name]
-                    //will retire in [# of Years] with [Amount of Money] in the bank, a vacation home in [Location] and a [Mode of Transportation].
 
                     userGreetings(firstName, lastName);
-                    Console.WriteLine(firstName + " " + lastName);
+                    Console.WriteLine("\n"+firstName + " " + lastName);
                     calculateYears(age);
                     calculateMoneyintheBank(month);
                     findLocationvacay(siblings);
                     coloRmatters(coloR);
+                    fortuneTellerjudges();
 
-
-                    
                     break;
                 }
 
             }
+
 
         }
         static void userGreetings(string firstName, string lastName)
@@ -111,11 +110,11 @@ namespace FinalProj
 
             if (retire == 0)
             {
-                Console.WriteLine("will retire in 5 years");
+                Console.WriteLine("You will retire in 5 years");
             }
             else
             {
-                Console.WriteLine("will retire in 10 years");
+                Console.WriteLine("You will retire in 10 years");
             }
             return retire;
         }
@@ -207,28 +206,30 @@ namespace FinalProj
 
             if (month >= 1 || month <= 4)
             {
-                Console.WriteLine("$15,000 in the bank.");
+                Console.WriteLine("You have $15,000 in the bank.");
 
             }
 
             else if (month >= 5 || month <= 8)
 
             {
-                Console.WriteLine("$5,000 in the bank.");
+                Console.WriteLine("You have $5,000 in the bank.");
             }
 
             else if (month >= 9 || month <= 12)
 
             {
-                Console.WriteLine("$2 in the bank.");
+                Console.WriteLine("You have $2 in the bank.");
 
             }
             return money;
         }
         static void fortuneTellerjudges()
         {
-            Console.WriteLine("That's a good fortune!");
+            Console.WriteLine("Congratulations! Live long and prosper! ");
         }
 
     }
+
+
 }
